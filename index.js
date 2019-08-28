@@ -44,11 +44,14 @@ const process = require('process');
         await leaveButton.click();
         break;
       default:
-        console.log('unknown command')
+        console.error('知らないコマンド')
     }
     await page.waitFor(5000);
     await page.screenshot({path: '4.png'});
     console.log('ミッションコンプリート.')
+  } catch(error) {
+    console.error('エラーが発生しました')
+    console.error(error)
   } finally {
     await browser.close();
   }
