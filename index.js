@@ -6,7 +6,7 @@ const process = require('process');
 (async () => {
   const browser = await puppeteer.launch({
     // ブラウザの動作を確認したいときはコメントアウト
-    //headless: false
+    //headless: false,
     args: config.proxy ? [ '--proxy-server=' + config.proxy, '--no-sandbox' ] : [ '--no-sandbox' ]
   });
 
